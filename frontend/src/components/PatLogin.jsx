@@ -4,7 +4,22 @@ function PatLogin() {
 
     return(
         <div>
-            <h1>Welcome to Patient login</h1>
+            <h2>Patient's Login</h2>
+            <div id="box" className="container-fluid">
+                <form method="post">
+                    <div className="val">
+                        <label>Enter ID</label><br></br>
+                        <input name="username" type={"text"} className="" placeholder="enter id!" ></input><br></br>
+                    </div>
+                    <div className="val">
+                        <label>Enter Password</label><br></br>
+                        <input type={"password"} name="username" className="" placeholder="enter password!" ></input><br></br>
+                    </div>
+                    <div className="val">
+                        <button type="submit" className="btn btn-lg btn-info">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 };
