@@ -10,14 +10,14 @@ function DocLogin() {
                 <form method="post">
                     <div className="val">
                         <label>Enter ID</label><br></br>
-                        <input name="username" type={"text"} className="" placeholder="enter id!" ></input><br></br>
+                        <input autoFocus required name="username" type={"text"} className="" placeholder="enter id!" ></input><br></br>
                     </div>
                     <div className="val">
                         <label>Enter Password</label><br></br>
-                        <input type={"password"} name="username" className="" placeholder="enter password!" ></input><br></br>
+                        <input required type={"password"} name="username" className="" placeholder="enter password!" ></input><br></br>
                     </div>
                     <div className="val">
-                        <button type="submit" className="btn btn-lg btn-info">Submit</button>
+                        <button type="submit" className="btn btn-lg btn-info">Login</button>
                     </div>
                 </form>
             </div>

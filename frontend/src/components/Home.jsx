@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import React from "react";
+import '../Home.css';
 
 function FrontPage() {
 
@@ -16,7 +17,7 @@ function FrontPage() {
             <div className="row">
                 <div className="col">
                     <Link to="/doctorLogin">
-                        <img 
+                        <img className="btn btn-lg btnImg"
                         src="https://cdn2.iconfinder.com/data/icons/covid-19-2/64/30-Doctor-1024.png" 
                         alt="/doctor"
                         width="80%"
@@ -27,7 +28,7 @@ function FrontPage() {
                 </div>
                 <div className="col">
                     <Link to="/patientLogin">
-                        <img
+                        <img className="btn btn-lg btnImg"
                         src="https://cdn0.iconfinder.com/data/icons/covid-19-37/512/Infected-patient-hospital-sick-covid19-coronavirus-covid-19-1024.png" 
                         alt="patient"
                         width="80%"
