@@ -1,0 +1,31 @@
+
+.patHomeCard:hover {
+
+    background-color: red;
+    border-style:groove;
+    border-width: 5px;
+}
+
+
+.card {
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: auto;
+    margin-top: 3%;
+    align-items: center;
+}
+
+img.card-img-top {
+    width: 200px;
+    height: 200px;
+}
+
+.cardOuterDiv {
+    padding: 0;
+    margin: 0;
+}
+
+.service{
+    margin: auto;
+    padding: 2%;
+}
