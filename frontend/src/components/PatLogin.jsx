@@ -1,20 +1,29 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function PatLogin() {
 
+    
     const [id, setId] = useState("");
     const [pw, setPw] = useState("");
+
+    useEffect(()=> {
+        console.log("Id change");
+        console.log(id);
+    },[id]);
+
+    useEffect(() => {
+        console.log("Password changed");
+        console.log(pw);
+    }, [pw]);
 
     function handleIdChange(e) {
         var val = e.target.value;
         setId(val);
-        console.log(id);
     }
 
     function handlePwChange(e) {
         var val = e.target.value;
         setPw(val);
-        console.log(pw);
     }
 
     return(
