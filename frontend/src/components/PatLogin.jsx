@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react";
+import patpw from "../pw"
+import {useNavigate} from 'react-router-dom'
+
 
 function PatLogin() {
 
-    
+    const navigate = useNavigate();
     const [id, setId] = useState("");
     const [pw, setPw] = useState("");
 
@@ -26,6 +29,19 @@ function PatLogin() {
         setPw(val);
     }
 
+    function handleSubmit(event) {
+
+        event.preventDefault();
+        if(patpw.get(id) === pw) {
+            console.log("Correct password");
+            navigate('/success');
+        }
+        else {
+            console.log("Wrong Password");
+            return navigate('/failure');
+        }
+    }
+
     return(
         <div>
             <h2>Patient's Login</h2>
@@ -40,7 +56,7 @@ function PatLogin() {
                         <input required onChange={handlePwChange} type={"password"} name="username" className="" placeholder="enter password!" ></input><br></br>
                     </div>
                     <div className="val">
-                        <button type="submit" className="btn btn-lg btn-info">Login</button>
+                        <button onClick={handleSubmit} type="submit" className="btn btn-lg btn-info">Login</button>
                     </div>
                 </form>
             </div>
