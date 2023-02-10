@@ -6,7 +6,7 @@ function FrontPage() {
 
     return(
         <div>
-            <h1>Welcome to Global Services</h1>
+            <h1>Welcome to <em><b style={{color:"red"}}>Virtual Global Hospital</b></em> Services</h1>
             <img 
             src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/globe-1024.png"
             alt="globe"

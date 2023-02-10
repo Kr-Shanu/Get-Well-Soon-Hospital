@@ -4,10 +4,12 @@ import '../../cards.css'
 function Cards(props) {
 
     const data = props.val;
-    console.log("received data");
-    console.log(data);
-    console.log("received the information");
-    console.log(data.information[0]);
+    // console.log("received data");
+    // console.log(data);
+    // console.log("received the information");
+    // console.log(data.information[0]);
+
+    
 
     return (
         <div className="firstAidCard">

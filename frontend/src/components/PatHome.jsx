@@ -12,14 +12,14 @@ function PatHome() {
                 {/* first aid card */}
                 <div className="service">
                     <Link to="/firstAid">
-                        <div class="card patHomeCard btn btn-lg" style={{ width: "18rem" }}>
+                        <div className="card patHomeCard btn btn-lg" style={{ width: "18rem" }}>
                             <img
-                                class="card-img-top"
+                                className="card-img-top"
                                 src="https://media.tenor.com/Ou58OPjLMuMAAAAC/mivkbp-first-aid.gif"
                                 alt="firstAid">
                             </img>
-                            <div class="card-body">
-                                <p class="card-text">Learn some basic <em><b>first-Aid</b></em> solutions in medical emergency.</p>
+                            <div className="card-body">
+                                <p className="card-text">Learn some basic <em><b>first-Aid</b></em> solutions in medical emergency.</p>
                             </div>
                         </div>
                     </Link>
@@ -29,14 +29,14 @@ function PatHome() {
                 {/* Daily Checkup and Reports card */}
                 <div className="service">
                     <Link to="/dailyCheckup">
-                        <div class="card col patHomeCard btn btn-lg" style={{ width: "18rem" }}>
+                        <div className="card col patHomeCard btn btn-lg" style={{ width: "18rem" }}>
                             <img
-                                class="card-img-top"
+                                className="card-img-top"
                                 src="https://i.pinimg.com/originals/b4/3d/b7/b43db78f64c8e26fb580bb7f00b66222.gif"
                                 alt="dailyCheckUp">
                             </img>
-                            <div class="card-body">
-                                <p class="card-text">Enter your <em><b>daily</b></em> health report for analysisand examination.</p>
+                            <div className="card-body">
+                                <p className="card-text">Enter your <em><b>daily</b></em> health report for analysisand examination.</p>
                             </div>
                         </div>
                     </Link>
@@ -46,13 +46,13 @@ function PatHome() {
                 {/* Reports and Medicines */}
                 <div className="service">
                     <Link to="/reportsAndMedicines">
-                        <div class="card col patHomeCard btn btn-lg" style={{ width: "18rem" }}>
+                        <div className="card col patHomeCard btn btn-lg" style={{ width: "18rem" }}>
                             <img
-                                class="card-img-top"
+                                className="card-img-top"
                                 src="https://pharmanewsintel.com/images/site/article_headers/_normal/2020-02-25-GettyImages-913088320.png"
                                 alt="Medicines"></img>
-                            <div class="card-body">
-                                <p class="card-text">Get information of earlier medicines and prescriptions.</p>
+                            <div className="card-body">
+                                <p className="card-text">Get information of earlier medicines and prescriptions.</p>
                             </div>
                         </div>
                     </Link>
@@ -62,13 +62,13 @@ function PatHome() {
                 {/* Medical emergency */}
                 <div className="service">
                     <Link to="/emergency">
-                        <div class="card col patHomeCard btn btn-lg" style={{ width: "18rem" }}>
+                        <div className="card col patHomeCard btn btn-lg" style={{ width: "18rem" }}>
                             <img 
-                                class="card-img-top" 
+                                className="card-img-top" 
                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScjwbLkbImDOfbigy0Zb0NxhxO3_7RThpL_VNkBfj_PHBTSOsE8x3gGAz4hio4waQ1ohM&usqp=CAU" 
                                 alt="medicalEmergency"></img>
-                            <div class="card-body">
-                                <p class="card-text">Contact us in case of any medical emergency and urgent care.</p>
+                            <div className="card-body">
+                                <p className="card-text">Contact us in case of any medical emergency and urgent care.</p>
                             </div>
                         </div>
                     </Link>

@@ -16,7 +16,7 @@ let firstAids = [
             "Keep the person still. If you're waiting for emergency help to arrive, try to keep the injured person from moving.",
             "If you haven't called for emergency help, get the injured person to an emergency room as soon as possible.",
             "Wash your hands. After helping the injured person, wash your hands, even if it doesn't look like any blood got on your hands."],
-        yt_url: "https://www.youtube.com/watch?v=AhANvBB9hz0&ab_channel=RafflesHospital"
+        yt_url: "https://youtube.com/embed/NxO5LvgqZe0"
     },
     {
         name: "Choking",
@@ -63,7 +63,7 @@ let firstAids = [
             "Repeat the back thumps and chest compressions if breathing doesn't start. Call for emergency medical help.",
             "Begin infant CPR if the airway is clear but the infant doesn't start breathing."
         ],
-        yt_url: "https://www.youtube.com/watch?v=h_vSEviFXIo&ab_channel=NicklausChildren%27sHospital"
+        yt_url: "https://youtube.com/embed/h_vSEviFXIo"
     },
     {
         name: "Burns",
@@ -77,7 +77,7 @@ let firstAids = [
             "Treat the pain from a burn with paracetamol or ibuprofen. Always check the manufacturer's instructions when using over-the-counter medication. Children under 16 years of age should not be given aspirin.",
             "Raise the affected area, if possible. This will hep to reduce swelling."
         ],
-        yt_url: "https://www.youtube.com/watch?v=B51VgoEZcDs&ab_channel=ApolloHospitals"
+        yt_url: "https://youtube.com/embed/B51VgoEZcDs"
     },
     {
         name: "Nosebleed",
@@ -97,7 +97,7 @@ let firstAids = [
             "Prevent another nosebleed. Don't pick or blow the nose. And don't drop the head below the heart or lift anything heavy for many hours. Gently put a saline gel (Ayr), antibiotic ointment (Neosporin) or petroleum jelly (Vaseline) on the inside of the nose. Put most of the salve on the middle part of the nose, also called the septum. Steam, humidifiers or an ice pack across the bridge of the nose also may help.",
             "If you have another nosebleed, try first-aid steps again. This time, spray both sides of the nose with a nasal spray that has oxymetazoline in it (Afrin). Do this after blowing the nose. Then pinch the nose again. Seek medical help if the bleeding does not stop."
         ],
-        yt_url: "https://www.youtube.com/watch?v=S-IlqmRoaZc&ab_channel=ApolloHospitals"
+        yt_url: "https://youtube.com/embed/S-IlqmRoaZc"
     },
     {
         name: "Sunburn",
@@ -121,7 +121,7 @@ let firstAids = [
             "Treat sunburned eyes by covering them with a clean towel dampened with cool tap water. Don't wear contacts until your eye symptoms have gone away. Don't rub your eyes.",
             "Seek medical care for large blisters or those that form on the face, hands or genitals. Also seek medical help if you have worsening pain, headache, confusion, nausea, fever, chills, eye pain or vision changes, or signs of infection, such as blisters with swelling, pus or streaks."
         ],
-        yt_url: "https://www.youtube.com/watch?v=u0sLzfq_w9s&ab_channel=StJohnAmbulance"
+        yt_url: "https://youtube.com/embed/-l8a3Bc3jRA"
     },
     {
         name: "Splinter",
@@ -141,7 +141,7 @@ let firstAids = [
             "The injury involves an eye or is close to an eye.",
             "The wound is deep or dirty and the injured person's last tetanus vaccination was more than five years ago. The doctor may recommend a booster."
         ],
-        yt_url: "https://www.youtube.com/watch?v=L6crQ3nMLkI&ab_channel=TheFirstAidShow"
+        yt_url: "https://youtube.com/embed/L6crQ3nMLkI"
     },
     {
         name: "Fractures",
@@ -162,7 +162,7 @@ let firstAids = [
             "Apply ice packs to limit swelling and help relieve pain. Don't apply ice directly to the skin. Wrap the ice in a towel, piece of cloth or some other material.",
             "Treat for shock. If the person feels faint or is breathing in short, rapid breaths, lay the person down with the head slightly lower than the trunk and, if possible, elevate the legs."
         ],
-        yt_url: "https://www.youtube.com/watch?v=2v8vlXgGXwE&ab_channel=StJohnAmbulance,"
+        yt_url: "https://youtube.com/embed/2v8vlXgGXwE"
     },
     {
         name: "Insect Bite/Sting",
@@ -194,7 +194,7 @@ let firstAids = [
             "Don't offer anything to drink.",
             "If needed, position the person to prevent choking on vomit."
         ],
-        yt_url: "https://www.youtube.com/watch?v=YkUW3pquCF4&ab_channel=Howcast"
+        yt_url: "https://youtube.com/embed/YkUW3pquCF4"
     },
     {
         name: "Poisoning",
@@ -245,7 +245,7 @@ let firstAids = [
             "If you suspect that a child has swallowed one of these batteries, immediately take him or her for an emergency X-ray to determine its location. If the battery is in the esophagus, it will have to be removed. If it has passed into the stomach, it's usually safe to allow it to pass on through the intestinal tract.",
             "Medicated patches. If you think a child got hold of medicated patches — adhesive products for transdermal drug delivery — carefully inspect the child's skin and remove any that are attached. Also check the roof of the mouth, where medicated patches can get stuck if the child sucks on them."
         ],
-        yt_url: "https://www.youtube.com/watch?v=b2ieb8BZJuY&ab_channel=StJohnAmbulance"
+        yt_url: "https://youtube.com/embed/b2ieb8BZJuY"
     }
 ];
 
