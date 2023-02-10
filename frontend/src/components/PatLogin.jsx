@@ -49,11 +49,11 @@ function PatLogin() {
                 <form method="post">
                     <div className="val">
                         <label>Enter ID</label><br></br>
-                        <input autoFocus required onChange={handleIdChange} name="username" type={"text"} className="" placeholder="enter id!" ></input><br></br>
+                        <input autoFocus required onChange={handleIdChange} name="username" type={"text"} className="" placeholder="enter id!" autoComplete="false"></input><br></br>
                     </div>
                     <div className="val">
                         <label>Enter Password</label><br></br>
-                        <input required onChange={handlePwChange} type={"password"} name="username" className="" placeholder="enter password!" ></input><br></br>
+                        <input required onChange={handlePwChange} type={"password"} name="username" className="" placeholder="enter password!" autoComplete="false"></input><br></br>
                     </div>
                     <div className="val">
                         <button onClick={handleSubmit} type="submit" className="btn btn-lg btn-info">Login</button>

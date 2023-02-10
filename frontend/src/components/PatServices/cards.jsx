@@ -6,6 +6,8 @@ function Cards(props) {
     const data = props.val;
     console.log("received data");
     console.log(data);
+    console.log("received the information");
+    console.log(data.information[0]);
 
     return (
         <div className="firstAidCard">
@@ -17,7 +19,7 @@ function Cards(props) {
                 </img>
                 <div className="card-body">
                 <h3>{data.name}</h3>
-                    <p className="card-text">{data.information.substring(0, 80)}</p>
+                    <p className="card-text">{data.information[0].substring(0, 80)}</p>
                 </div>
             </div>
         </div>
