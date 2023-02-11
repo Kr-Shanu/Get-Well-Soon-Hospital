@@ -3,6 +3,10 @@
     margin: auto;
 }
 
+#cardBtn:hover {
+    background-color: "red";
+}
+
 .imgInsideModal {
     min-width: 100%;
     max-width: 100%;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button'
 import '../../cards.css'
 
 function Example(props) {
@@ -9,26 +11,28 @@ function Example(props) {
 
     return (
         <>
-
-            <div className="firstAidCard" onClick={() => setShow(true)}>
-                <div className="card patHomeCard btn btn-lg" style={{ width: "18rem" }}>
-                    <img
-                        className="card-img-top"
-                        src={data.img_src}
-                        alt="firstAid">
-                    </img>
-                    <div className="card-body">
-                        <h3>{data.name}</h3>
-                        <p className="card-text">{data.information[0].substring(0, 80)}</p>
-                    </div>
-                </div>
+            <div className="firstAidCard">
+                <Button style={{ padding: '0' }} variant="dark" onClick={() => setShow(true)}>
+                    <Card style={{ width: '18rem', margin: '0', padding: '0' }}>
+                        <Card.Img variant="top" src={data.img_src} />
+                        <Card.Body>
+                            <Card.Title><b>{data.name}</b></Card.Title>
+                            <Card.Text>
+                                {data.information[0].substring(0, 80)}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Button>
             </div>
+
 
             <Modal
                 size="lg"
                 show={show}
                 onHide={() => setShow(false)}
+                dialogClassName="modal-99w"
                 aria-labelledby="example-custom-modal-styling-title"
+                scrollable
             >
 
                 <Modal.Header closeButton>
@@ -38,15 +42,18 @@ function Example(props) {
                         <img alt={data.name} src={data.img_src} className="imgInsideModal"></img>
                     </Modal.Title>
                 </Modal.Header>
+
                 <Modal.Body>
 
-                    {(data.information.map)(data => {
-                        return (
-                            <p>
-                                {data}
-                            </p>
-                        );
-                    })}
+                    <ul>
+                            {(data.information.map)(data => {
+                                return (
+                                    <li>
+                                        {data}
+                                    </li>
+                                );
+                            })}
+                    </ul>
 
                     <iframe style={{ minWidth: "100%", minHeight: "400px" }} src={data.yt_url}
                         allow='autoplay; encrypted-media'
@@ -55,11 +62,10 @@ function Example(props) {
                     />
 
                 </Modal.Body>
+
             </Modal>
         </>
     );
 }
 
 export default Example;
-
-
