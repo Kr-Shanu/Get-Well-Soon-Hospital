@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "inspirational-quotes": "^1.0.8"
+    "inspirational-quotes": "^1.0.8",
+    "mongoose": "^6.9.1"
   }
 }
