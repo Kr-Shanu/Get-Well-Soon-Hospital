@@ -12,6 +12,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.static("public"));
 
 // connection to mongoose local server at host 27017
 // and creating a database named Patient DataBase
@@ -45,7 +46,7 @@ const patSchema = {
 const Pat = mongoose.model("Pat", patSchema);
 
 app.get("/", function (req, res) {
-  res.send("<h1>Hello World</h1>");
+  res.sendFile(__dirname,'/index.html');
 });
 
 app.get("/tension", function (req, res) {
