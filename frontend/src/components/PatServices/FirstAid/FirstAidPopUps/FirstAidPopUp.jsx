@@ -7,7 +7,10 @@ function FirstAidPopUp(props) {
 
     useEffect (() => {
         document.body.style.overflowY = "hidden";
-    },)
+        return() => {
+            document.body.style.overflowY = "scroll";
+        }
+    }, [])
 
     return (
         <div onClick={() => {props.close()}} className='first-aid-popup-body'>

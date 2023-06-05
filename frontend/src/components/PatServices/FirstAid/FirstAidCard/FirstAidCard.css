@@ -7,23 +7,22 @@
 .first-aid-card-main-container {
   width: 22vw;
   height: 30vh;
-  background-color: white;
+  background-color: black;
   border-radius: 4px;
-  color: black;
+  color: white;
   margin: 1rem;
   padding: 0.5rem;
 }
 .first-aid-card-main-container img {
   width: 20vw;
   height: 20vh;
-  border: 2px solid black;
 }
 .first-aid-card-main-container h2 {
   margin-top: 2rem;
 }
 
 .first-aid-card-main-container:hover {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.2);
   color: white;
   cursor: pointer;
 }/*# sourceMappingURL=FirstAidCard.css.map */
