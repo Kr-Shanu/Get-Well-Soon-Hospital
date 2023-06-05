@@ -5,12 +5,11 @@ import PatLogin from './components/PatLogin'
 import {Route, Routes} from "react-router-dom";
 import Failure from './components/Failure';
 // import Success from './components/Success';
-import PatHome from './components/PatHome';
-import Emergency from './components/PatServices/Emergency'
+import PatHome from './components/PatServices/PatHome/PatHome';
+import Emergency from './components/PatServices/Emergency/Emergency'
 import DailyCheckup from './components/PatServices/DailyCheckup'
 import Prescriptions from './components/PatServices/Prescriptions'
-import FirstAid from './components/PatServices/FirstAid'
-
+import FirstAid from './components/PatServices/FirstAid/FirstAid'
 
 function App() {
 

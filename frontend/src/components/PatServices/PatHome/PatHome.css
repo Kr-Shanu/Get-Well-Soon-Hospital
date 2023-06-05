@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pat-home-main-container h1 {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+.pat-home-main-container .pat-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=PatHome.css.map */

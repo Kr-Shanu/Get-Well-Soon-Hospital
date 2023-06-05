@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.first-aid-card-main-container {
+
+    width: 22vw;
+    height: 30vh;
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+    margin: 1rem;
+    padding: 0.5rem;
+
+    img {
+        width: 20vw;
+        height: 20vh;
+        border: 2px solid black;
+    }
+
+    h2 {
+        margin-top: 2rem;
+    }
+}
+
+.first-aid-card-main-container:hover {
+
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
