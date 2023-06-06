@@ -1,28 +1,27 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .first-aid-card-main-container {
-  width: 22vw;
-  height: 30vh;
-  background-color: black;
+  width: 20vw;
+  height: 38vh;
+  background-color: RGB(56, 56, 56);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 4px;
-  color: white;
-  margin: 1rem;
+  color: RGB(254, 255, 255);
+  margin: 1vw;
   padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .first-aid-card-main-container img {
-  width: 20vw;
-  height: 20vh;
+  width: 19vw;
+  height: 30vh;
 }
 .first-aid-card-main-container h2 {
-  margin-top: 2rem;
+  margin-top: 0.2rem;
 }
 
 .first-aid-card-main-container:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: black;
   color: white;
   cursor: pointer;
 }/*# sourceMappingURL=FirstAidCard.css.map */

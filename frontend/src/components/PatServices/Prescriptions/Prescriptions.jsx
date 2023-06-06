@@ -1,3 +1,4 @@
+import './Prescription.css'
 import React from "react";
 
 function Prescriptions() {

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import patpw from "../pw"
+import patpw from "../elements/pw"
 import {useNavigate} from 'react-router-dom'
 
 

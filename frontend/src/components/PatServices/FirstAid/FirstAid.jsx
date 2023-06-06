@@ -1,6 +1,6 @@
 import './FirstAid.css'
 import React, { useState } from 'react'
-import firstAids from '../../../firstaidInfo';
+import firstAids from '../../../elements/firstaidInfo';
 import FirstAidCard from './FirstAidCard/FirstAidCard';
 import FirstAidPopUp from './FirstAidPopUps/FirstAidPopUp';
 

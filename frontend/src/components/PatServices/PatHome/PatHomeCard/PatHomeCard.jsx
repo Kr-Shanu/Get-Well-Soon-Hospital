@@ -10,15 +10,14 @@ function PatHomeCard(props) {
     return (
         <div className='pat-home-card-container'>
 
-            <div id='heading'>
                 <h2>{heading}</h2>
+
                 <img 
                     alt={heading}
                     src={image}
                 ></img>
-                <p>{details}</p>
-            </div>
 
+                <p>{details}</p>
         </div>
     )
 }
