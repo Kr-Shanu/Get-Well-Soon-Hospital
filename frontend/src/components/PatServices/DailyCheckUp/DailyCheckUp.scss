@@ -28,15 +28,8 @@
     width: 100%;
 }
 
-.daily-checkup-body {
-
-    h1 {
-        margin: 2rem;
-    }
-
-    .form-container {
-
-        display: flex;
+@mixin form-container {
+    display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -56,6 +49,16 @@
             border: none;
             border-radius: 5px;
         }
+}
+
+.daily-checkup-body {
+
+    h1 {
+        margin: 2rem;
+    }
+
+    .form-container {
+        @include form-container();
 
         .vital-check-section {
             @include check-section();

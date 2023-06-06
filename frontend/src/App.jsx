@@ -1,8 +1,7 @@
 import './App.css'
-import Home from './components/Home'
+import Home from './components/Home/Home'
 import DocLogin from './components/DocLogin'
-import PatLogin from './components/PatLogin';
-import PatLoginTwo from './components/PatServices/PatLogin/PatLogin'
+import PatLogin from './components/PatServices/PatLogin/PatLogin'
 import {Route, Routes} from "react-router-dom";
 import Failure from './components/Failure';
 // import Success from './components/Success';
@@ -22,7 +21,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/doctorLogin" element={<DocLogin />} />
           <Route path="/patientLogin" element={<PatLogin />} />
-          <Route path="/patientLogintwo" element={<PatLoginTwo />} />
           <Route path="/failure" element={<Failure />} />
           <Route path='/success' element={<PatHome/>} />
           <Route path='/emergency' element={<Emergency/>} />
