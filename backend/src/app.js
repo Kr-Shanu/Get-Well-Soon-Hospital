@@ -3,6 +3,7 @@ const express = require("express");
 
 // require mongoose to setup database
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
 
 const app = express();
 
@@ -46,19 +47,16 @@ const patSchema = {
 const Pat = mongoose.model("Pat", patSchema);
 
 app.get("/", function (req, res) {
-  res.sendFile(__dirname,'/index.html');
+  console.log(`Accessing home route:`);
+  res.status(200).send("Hello World");
+  // res.sendFile(__dirname,'/index.html');
 });
 
 app.get("/tension", function (req, res) {
   res.send("<h1>Chal be tension mat de</h1>");
 });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8080;
-}
 
-
-app.listen(port, function () {
-  console.log("Server started successfully");
+app.listen(8000, function () {
+  console.log(`Server started successfully at port 8000`);
 });
