@@ -1,4 +1,3 @@
-import './App.css'
 import Home from './components/Home/Home'
 import DocLogin from './components/DocLogin'
 import PatLogin from './components/PatServices/PatLogin/PatLogin'
