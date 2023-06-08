@@ -1,7 +1,8 @@
 import './PatLogin.css'
 import React, { useEffect, useState } from 'react'
-import Pass from '../../../elements/pw';
+// import Pass from '../../../elements/pw';
 import { useNavigate } from 'react-router-dom';
+import verifyPassWord from '../../../Services/verifyPassWord';
 
 function PatLogin() {
 
@@ -38,7 +39,7 @@ function PatLogin() {
     // Handle form submission
     const handleSubmit = (e) => {
 
-        if (Pass.get(credential[0]) === credential[1]) {
+        if (verifyPassWord(credential[0], credential[1])) {
             console.log("Password is correct");
             navigate('/success');
         }
@@ -55,8 +56,8 @@ function PatLogin() {
             <h1>Please Login!</h1>
             <div className='login-form-container'>
                 <div>
-                    <label htmlFor='id'>Id</label><br></br>
-                    <input onChange={(e) => handleIdChange(e)} name='id' type='text' placeholder='Enter patients Id'></input><br></br>
+                    <label htmlFor='number'>Phone</label><br></br>
+                    <input onChange={(e) => handleIdChange(e)} name='number' type='number' placeholder='Enter your Phone number'></input><br></br>
                 </div>
                 <div>
                     <label htmlFor='password'>Password</label><br></br>

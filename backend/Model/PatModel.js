@@ -15,20 +15,23 @@ const patientSchema = new mongoose.Schema({
     },
     password: {
         type: String,
+        required: true,
     },
     profilePicture: {
         type: Buffer
     },
     email: {
         type: String,
+        unique: true,
     },
     phoneNumber: {
         type: String,
         required: true,
+        unique: true,
     },
     prescription: [prescriptionSchema],
-    dailyCheckup: [dailyCheckupSchema]
-});
+    dailyCheckup: [dailyCheckupSchema],
+}, {timestamps: true});
 
 const Patient = mongoose.model('Patient', patientSchema);
 

@@ -1,8 +1,6 @@
 const PatientModel = require('../Model/PatModel')
 
-// I need to get all the patients with an asynchronous function
-// and export it.
-
+// function to fetch all the patients from the database
 const getAllPatient = async () => {
 
     try {
@@ -16,3 +14,5 @@ const getAllPatient = async () => {
 };
 
 module.exports = getAllPatient;
+
+// Working as fine as possible: checked and verified ✅✅
