@@ -1,15 +1,17 @@
-// import axios from "axios";
-import getAllPatient from "./getAllPatient";
+import getAllPatient from "./getAllPatient.js";
 
 const verifyPassWord = async (phoneNumber, pw) => {
-
     const data = await getAllPatient();
-    for(let i = 0; i < data.length; i++) {
-        if(data[i].phoneNumber === phoneNumber && data[i].password === pw) 
-            return true;
-    }
-    return false;
+    let found = false;
 
-}
+    data.forEach((patient) => {
+        if (patient.phoneNumber === phoneNumber && patient.password === pw) {
+            found = true;
+        }
+    });
+
+    return found;
+};
+
 
 export default verifyPassWord;

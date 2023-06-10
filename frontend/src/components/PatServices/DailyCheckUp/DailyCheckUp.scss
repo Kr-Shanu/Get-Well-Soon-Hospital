@@ -10,10 +10,13 @@
         background-color: rgb(21, 162, 184);
         border-radius: 5px;
         color: whitesmoke;
+        min-width: 80px;
+        border: none;
     }
 
     input {
         width: 10vw;
+        min-width: 80px;
     }
 }
 
