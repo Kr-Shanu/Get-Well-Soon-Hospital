@@ -9,9 +9,9 @@ function PatLogin() {
     const navigate = useNavigate();
 
     const [credential, setCredential] = useState([
-        "", // id
+        0, // id
         ""  // password
-    ])
+    ]);
 
     const handleIdChange = (e) => {
 
@@ -37,16 +37,22 @@ function PatLogin() {
     }, [credential])
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
 
-        if (verifyPassWord(credential[0], credential[1])) {
-            console.log("Password is correct");
-            navigate('/success');
-        }
-        else {
-            console.log("Wrong Password");
-            return navigate('/failure');
-        }
+        await verifyPassWord(credential[0].toString(), credential[1])
+            .then((verified) => {
+                console.log(`Verified value : ${verified}`);
+                if (verified === true) {
+                    navigate('/success')
+                }
+                else {
+                    navigate('/failure')
+                }
+            })
+            .catch((error) => {
+                console.log(`Error occured: ${error}`);
+            });
+
     }
 
 
@@ -56,7 +62,7 @@ function PatLogin() {
             <h1>Please Login!</h1>
             <div className='login-form-container'>
                 <div>
-                    <label htmlFor='number'>Phone</label><br></br>
+                    <label htmlFor='number'>Phone Number</label><br></br>
                     <input onChange={(e) => handleIdChange(e)} name='number' type='number' placeholder='Enter your Phone number'></input><br></br>
                 </div>
                 <div>
@@ -65,7 +71,12 @@ function PatLogin() {
                 </div>
             </div>
             <div id='login-btn'>
-                <button onClick={(e) => handleSubmit(e)}>Login</button>
+                <div>
+                    <button onClick={(e) => handleSubmit(e)}>Login</button>
+                </div>
+                <div id='signup-btn'>
+                    <button>Sign Up</button>
+                </div>
             </div>
         </div>
     )

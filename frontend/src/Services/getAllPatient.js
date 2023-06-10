@@ -9,6 +9,7 @@ const getAllPatient = async () => {
     }
     catch(error) {
         console.log(`Error occured: \n ${error}`);
+        throw error;
     }
 }
 

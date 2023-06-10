@@ -165,7 +165,7 @@ let firstAids = [
         yt_url: "https://youtube.com/embed/2v8vlXgGXwE"
     },
     {
-        name: "Insect Bite/Sting",
+        name: "Sting",
         img_src: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/09/tick-biting-body.jpg?w=1155&h=1528",
         information: [
             "Most insect bites and stings are mild and can be treated at home. They might cause itching, swelling and stinging that go away in a day or two. Some bites or stings can transmit disease-causing bacteria, viruses or parasites. Stings from bees, yellow jackets, wasps, hornets and fire ants might cause a severe allergic reaction (anaphylaxis).",
