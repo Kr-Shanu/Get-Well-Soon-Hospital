@@ -1,13 +1,76 @@
 import './DailyCheckUp.css'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function DailyCheckup() {
 
   const handleSubmit = (event) => {
     console.log("Form submitted");
     event.preventDefault();
+    console.log(`Form data: ${data}`);
   }
 
+  const [data, setData] = useState({
+
+    "height": 0,
+    "weight": 0,
+    "systolicPressure": 0,
+    "diastolicPressure": 0,
+    "bloodSugar": 0,
+    "caloriesIntake": 0,
+    "caloriesBurnt": 0
+  });
+
+  const handleChange = (e) => {
+
+    const vital = e.target;
+    console.log(`Vital: ${vital.name}`);
+    const value = vital.value;
+
+    switch (vital.name) {
+
+      case "height": setData((prev) => ({
+        ...prev,
+        "height": value,
+      }));
+        break;
+      case "weight": setData((prev) => ({
+        ...prev,
+        "weight": value,
+      }));
+        break;
+      case "systolicPressure": setData((prev) => ({
+        ...prev,
+        "systolicPressure": value,
+      }));
+        break;
+      case "diastolicPressure": setData((prev) => ({
+        ...prev,
+        "diastolicPressure": value,
+      }));
+        break;
+      case "bloodSugar": setData((prev) => ({
+        ...prev,
+        "bloodSugar": value,
+      }));
+        break;
+      case "caloriesIntake": setData((prev) => ({
+        ...prev,
+        "caloriesIntake": value,
+      }));
+        break;
+      case "caloriesBurnt": setData((prev) => ({
+        ...prev,
+        "caloriesBurnt": value,
+      }));
+        break;
+      default: console.log(`not possible`);
+    }
+  }
+
+
+  useEffect(() => {
+    console.log(`Data Changed: ${data.height}`);
+  }, [data])
 
   return (
     <div className='daily-checkup-body'>
@@ -18,14 +81,26 @@ function DailyCheckup() {
 
       <div className='form-container'>
 
-        <form onSubmit={handleSubmit} action='https://localhost:8080/submitCheckup' method='post'>
+        <form onSubmit={handleSubmit}>
 
           <div className='bmi-section sub-section'>
             <h3>BMI</h3>
             <label htmlFor="height">Height</label><br></br>
-            <input name='height' type='number' placeholder='Enter height in cm'></input><br></br>
+            <input
+              name='height'
+              type='number'
+              placeholder='Enter height in cm'
+              onChange={handleChange}>
+            </input>
+            <br></br>
             <label htmlFor='weight'>Weight</label><br></br>
-            <input name='weight' type='number' placeholder='Enter Weight in Kgs'></input><br></br>
+            <input
+              name='weight'
+              type='number'
+              placeholder='Enter Weight in Kgs'
+              onChange={handleChange}>
+            </input>
+            <br></br>
             <br></br>
             <div className='vital-check-section'>
               <div>
@@ -44,16 +119,30 @@ function DailyCheckup() {
               Blood Pressure
             </h3>
             <label htmlFor='systolicPressure'>Systolic Pressure</label><br></br>
-            <input name='systolicPressure' placeholder='Enter systolic pressure'></input><br></br>
+            <input
+              name='systolicPressure'
+              placeholder='Enter systolic pressure'
+              onChange={handleChange}>
+            </input>
+            <br></br>
             <label htmlFor='diastolicPressure'>Diastolic Pressure</label><br></br>
-            <input name='diastolicPressure' placeholder='Enter the diastolic processure'></input><br></br>
+            <input
+              name='diastolicPressure'
+              placeholder='Enter the diastolic processure'
+              onChange={handleChange}>
+            </input>
+            <br></br>
             <br></br>
             <div className='vital-check-section'>
               <div>
                 <button>Status</button>
               </div>
               <div>
-                <input name='bloodPressureStatus' value="Click to check"></input>
+                <input
+                  name='bloodPressureStatus'
+                  value="Click to check"
+                  onChange={handleChange}>
+                </input>
               </div>
             </div>
             <br></br>
@@ -62,13 +151,27 @@ function DailyCheckup() {
 
           <div className='general-info sub-section'>
             <label htmlFor='bloodSugar'>Blood Sugar</label><br></br>
-            <input name='bloodSugar' placeholder='Enter your blood sugar in dg/mg'></input><br></br>
+            <input
+              name='bloodSugar'
+              placeholder='Enter your blood sugar in dg/mg'
+              onChange={handleChange}>
+            </input>
+            <br></br>
             <label htmlFor='calorieIntake'>Calories Intake</label><br></br>
-            <input name='calorieIntake' placeholder='Enter calories intake in kcal'></input><br></br>
+            <input
+              name='calorieIntake'
+              placeholder='Enter calories intake in kcal'
+              onChange={handleChange}>
+            </input>
+            <br></br>
             <label htmlFor='calorieBurnt'>Calories Burnt</label><br></br>
-            <input name='calorieBurnt' placeholder='Enter Calories burnt in kcal'></input>
+            <input
+              name='calorieBurnt'
+              placeholder='Enter Calories burnt in kcal'
+              onChange={handleChange}>
+            </input>
           </div>
-          
+
           <input id='submit-btn' type='submit'></input>
         </form>
       </div>
