@@ -25,7 +25,11 @@ const dailyCheckupSchema = new mongoose.Schema({
     },
     caloriesBurnt: {
         type: Number,
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
 });
 
 module.exports = dailyCheckupSchema;
