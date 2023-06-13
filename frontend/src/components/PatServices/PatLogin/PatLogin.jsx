@@ -75,7 +75,7 @@ function PatLogin() {
                     <button onClick={(e) => handleSubmit(e)}>Login</button>
                 </div>
                 <div id='signup-btn'>
-                    <button>Sign Up</button>
+                    <button onClick={() => navigate('/signUp')}>Sign Up</button>
                 </div>
             </div>
         </div>

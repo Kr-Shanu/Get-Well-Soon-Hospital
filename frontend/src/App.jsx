@@ -9,6 +9,7 @@ import Emergency from './components/PatServices/Emergency/Emergency'
 import Prescriptions from './components/PatServices/Prescriptions/Prescriptions'
 import FirstAid from './components/PatServices/FirstAid/FirstAid'
 import DailyCheckup from './components/PatServices/DailyCheckUp/DailyCheckup'
+import SignUp from './components/PatServices/SignUp/SignUp';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/dailyCheckup' element={<DailyCheckup/>} />
           <Route path='/reportsAndMedicines' element={<Prescriptions/>} />
           <Route path='/firstAid' element={<FirstAid/>} />
+          <Route path='/signUp' element={<SignUp/>} />
         </Routes>
       </header>
     </div>

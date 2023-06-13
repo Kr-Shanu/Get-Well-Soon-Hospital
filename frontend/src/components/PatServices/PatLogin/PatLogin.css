@@ -28,6 +28,7 @@
 .pat-login-main-container #login-btn {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 5vw;
 }
 .pat-login-main-container #login-btn button {
