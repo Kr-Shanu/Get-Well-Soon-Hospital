@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const dailyCheckupSchema = new mongoose.Schema({
-
     height: {
         type: Number,
     },
@@ -14,7 +13,7 @@ const dailyCheckupSchema = new mongoose.Schema({
     systolicPressure: {
         type: Number,
     },
-    dialstolicPressure: {
+    diastolicPressure: {
         type: Number,
     },
     bloodSugar: {
@@ -28,8 +27,8 @@ const dailyCheckupSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
     },
 });
 
-module.exports = dailyCheckupSchema;
+module.exports = mongoose.model('DailyCheckup', dailyCheckupSchema);

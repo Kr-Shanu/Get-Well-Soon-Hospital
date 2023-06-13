@@ -1,13 +1,37 @@
 import './DailyCheckUp.css'
 import React, { useEffect, useState } from 'react'
+import addDailyCheckupData from '../../../Services/addDailyCheckupData';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 function DailyCheckup() {
 
-  const handleSubmit = (event) => {
-    console.log("Form submitted");
+  const navigate = useNavigate();
+  const userDetails = useSelector((action) => {
+    return action.patient;
+  });
+
+  const handleSubmit = async (event) => {
+
     event.preventDefault();
-    console.log(`Form data: ${data}`);
+
+    if (userDetails.loggedIn === false) {
+      navigate('/patientLogin');
+    }
+    else {
+      setData((prev) => ({
+        ...prev,
+        "patientId": userDetails.patientId
+      }));
+      console.log(data.patientId);
+      try {
+        await addDailyCheckupData(data);
+      } catch (error) {
+        console.log(`Error occured: ${error}`);
+      }
+    }
   }
+
 
   const [data, setData] = useState({
 
@@ -17,7 +41,8 @@ function DailyCheckup() {
     "diastolicPressure": 0,
     "bloodSugar": 0,
     "caloriesIntake": 0,
-    "caloriesBurnt": 0
+    "caloriesBurnt": 0,
+    "patientId": "",
   });
 
   const handleChange = (e) => {
@@ -159,14 +184,14 @@ function DailyCheckup() {
             <br></br>
             <label htmlFor='calorieIntake'>Calories Intake</label><br></br>
             <input
-              name='calorieIntake'
+              name='caloriesIntake'
               placeholder='Enter calories intake in kcal'
               onChange={handleChange}>
             </input>
             <br></br>
             <label htmlFor='calorieBurnt'>Calories Burnt</label><br></br>
             <input
-              name='calorieBurnt'
+              name='caloriesBurnt'
               placeholder='Enter Calories burnt in kcal'
               onChange={handleChange}>
             </input>

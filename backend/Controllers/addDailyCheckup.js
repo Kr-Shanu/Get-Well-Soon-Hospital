@@ -1,16 +1,15 @@
-const Patient = require('../Model/PatModel')
-const dailyCheckupSchema = require('../Model/PatientInfoSchemas/dailyCheckUp');
+const Patient = require('../Model/PatModel');
+const DailyCheckup = require('../Model/PatientInfoSchemas/dailyCheckUp');
 
 const addDailyCheckUp = async (body) => {
-
     const bmi = body.weight / ((body.height / 100) * (body.height / 100));
+    console.log(`Body received at adding daily checkup: ${body}`);
 
     try {
         const patientId = body.patientId;
         const patient = await Patient.findById(patientId);
 
-        const vitals = new dailyCheckupSchema({
-
+        const vitals = new DailyCheckup({
             height: body.height,
             weight: body.weight,
             bmi: bmi,
@@ -23,10 +22,10 @@ const addDailyCheckUp = async (body) => {
 
         patient.dailyCheckup.push(vitals);
         await patient.save();
+        console.log(`Patient vitals recorded successfully`);
+    } catch (error) {
+        console.log(`Error occurred: ${error}`);
     }
-    catch (error) {
-        console.log(`Error occured: ${error}`);
-    }
-}
+};
 
 module.exports = addDailyCheckUp;

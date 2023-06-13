@@ -1,7 +1,7 @@
 // Here we will create a model for patient information
 const mongoose = require('mongoose');
-const prescriptionSchema = require('./PatientInfoSchemas/prescription');
-const dailyCheckupSchema = require('./PatientInfoSchemas/dailyCheckUp');
+const Prescription = require('./PatientInfoSchemas/prescription');
+const DailyCheckup = require('./PatientInfoSchemas/dailyCheckUp');
 
 const patientSchema = new mongoose.Schema({
 
@@ -29,8 +29,8 @@ const patientSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    prescription: [prescriptionSchema],
-    dailyCheckup: [dailyCheckupSchema],
+    prescription: [Prescription.schema],
+    dailyCheckup: [DailyCheckup.schema],
 }, {timestamps: true});
 
 const Patient = mongoose.model('Patient', patientSchema);

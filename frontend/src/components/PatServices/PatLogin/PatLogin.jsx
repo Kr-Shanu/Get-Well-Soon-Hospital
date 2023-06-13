@@ -1,12 +1,14 @@
 import './PatLogin.css'
 import React, { useEffect, useState } from 'react'
-// import Pass from '../../../elements/pw';
 import { useNavigate } from 'react-router-dom';
 import verifyPassWord from '../../../Services/verifyPassWord';
+import { useDispatch } from 'react-redux';
+import { patientLoggedIn } from "../../Store/Slices/PatientSlice"
 
 function PatLogin() {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [credential, setCredential] = useState([
         0, // id
@@ -33,29 +35,26 @@ function PatLogin() {
 
         console.log("Id = " + credential[0]);
         console.log("Pw = " + credential[1]);
+        
 
     }, [credential])
 
     // Handle form submission
     const handleSubmit = async (e) => {
 
-        await verifyPassWord(credential[0].toString(), credential[1])
-            .then((verified) => {
-                console.log(`Verified value : ${verified}`);
-                if (verified === true) {
-                    navigate('/success')
-                }
-                else {
-                    navigate('/failure')
-                }
-            })
-            .catch((error) => {
-                console.log(`Error occured: ${error}`);
-            });
-
+        try {
+            
+            const validate = await verifyPassWord(credential[0].toString(), credential[1]);
+            if(validate !== -1) {
+                dispatch(patientLoggedIn(validate));
+                console.log(`Patient id : ${validate}`);
+                navigate('/success');
+            }
+        } catch (error) {
+            console.log(`Error occured: ${error}`);
+            navigate('/failure')
+        }
     }
-
-
 
     return (
         <div className='pat-login-main-container'>
