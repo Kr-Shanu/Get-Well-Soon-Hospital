@@ -1,0 +1,47 @@
+.prescription-main-body {
+  width: 100%;
+}
+.prescription-main-body .date {
+  background-color: RGB(56, 56, 56);
+  border-radius: 8px;
+  margin-bottom: 3vh;
+}
+.prescription-main-body .prescription-card-body {
+  display: flex;
+  flex-direction: row;
+  gap: 5vh;
+  flex-wrap: wrap;
+}
+.prescription-main-body .prescription-card-body #doctor-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: RGB(56, 56, 56);
+  border-radius: 8px;
+  height: 22vh;
+  min-width: 200px;
+  flex: 1;
+}
+.prescription-main-body .prescription-card-body #details {
+  background-color: RGB(56, 56, 56);
+  border-radius: 8px;
+  height: 22vh;
+  min-width: 200px;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.prescription-main-body .prescription-card-body #medicines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: RGB(56, 56, 56);
+  border-radius: 8px;
+  height: 22vh;
+  min-width: 200px;
+  padding: 2rem;
+  flex: 1;
+  overflow-y: scroll;
+}/*# sourceMappingURL=PrescriptionCard.css.map */

@@ -1,0 +1,12 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prescription-card-container {
+
+    @include center();
+    margin: 5vw;
+
+}

@@ -1,1 +1,6 @@
-/*# sourceMappingURL=Prescription.css.map */
+.prescription-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vw;
+}/*# sourceMappingURL=Prescription.css.map */
