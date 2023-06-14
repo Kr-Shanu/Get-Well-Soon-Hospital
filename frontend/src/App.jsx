@@ -1,5 +1,5 @@
 import Home from './components/Home/Home'
-import DocLogin from './components/DocLogin'
+import DocLogin from './components/DocServices/DocLogin/DocLogin';
 import PatLogin from './components/PatServices/PatLogin/PatLogin'
 import {Route, Routes} from "react-router-dom";
 import Failure from './components/Failure';
@@ -10,6 +10,7 @@ import Prescriptions from './components/PatServices/Prescriptions/Prescriptions'
 import FirstAid from './components/PatServices/FirstAid/FirstAid'
 import DailyCheckup from './components/PatServices/DailyCheckUp/DailyCheckup'
 import SignUp from './components/PatServices/SignUp/SignUp';
+import DocSignUp from './components/DocServices/DocSignUp/DocSignUp'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
       <header className='App-header'>
       <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/doctorLogin" element={<DocLogin />} />
+          <Route path="/docLogin" element={<DocLogin />} />
           <Route path="/patientLogin" element={<PatLogin />} />
           <Route path="/failure" element={<Failure />} />
           <Route path='/success' element={<PatHome/>} />
@@ -28,6 +29,7 @@ function App() {
           <Route path='/reportsAndMedicines' element={<Prescriptions/>} />
           <Route path='/firstAid' element={<FirstAid/>} />
           <Route path='/signUp' element={<SignUp/>} />
+          <Route path='/docSignUp' element={<DocSignUp/>} />
         </Routes>
       </header>
     </div>

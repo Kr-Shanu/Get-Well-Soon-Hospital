@@ -24,7 +24,7 @@ function Home() {
                 </img>
             </div>
             <div className='navigatingg-logos'>
-                <div id='doc' onClick={() => {navigate('/doctorLogin')}}>
+                <div id='doc' onClick={() => {navigate('/docLogin')}}>
                     <img
                         id='doc-logo'
                         alt='doctor'
