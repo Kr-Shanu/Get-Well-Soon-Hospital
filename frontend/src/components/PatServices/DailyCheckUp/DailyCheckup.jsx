@@ -19,11 +19,6 @@ function DailyCheckup() {
       navigate('/patientLogin');
     }
     else {
-      setData((prev) => ({
-        ...prev,
-        "patientId": userDetails.patientId
-      }));
-      console.log(data.patientId);
       try {
         await addDailyCheckupData(data);
       } catch (error) {
@@ -42,7 +37,7 @@ function DailyCheckup() {
     "bloodSugar": 0,
     "caloriesIntake": 0,
     "caloriesBurnt": 0,
-    "patientId": "",
+    "patientId": userDetails.patientId,
   });
 
   const handleChange = (e) => {
@@ -132,7 +127,7 @@ function DailyCheckup() {
                 <button>My BMI</button>
               </div>
               <div>
-                <input name='bmi' type='number' value="0"></input>
+                <input name='bmi' type='number'></input>
               </div>
             </div>
             <br></br>

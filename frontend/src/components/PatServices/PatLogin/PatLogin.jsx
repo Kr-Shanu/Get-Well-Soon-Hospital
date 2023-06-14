@@ -43,7 +43,6 @@ function PatLogin() {
     const handleSubmit = async (e) => {
 
         try {
-            
             const validate = await verifyPassWord(credential[0].toString(), credential[1]);
             if(validate !== -1) {
                 dispatch(patientLoggedIn(validate));
