@@ -8,7 +8,8 @@ const connectMongoose = require('./Connections/connection');
 const cors = require('cors')
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/patient');
+var patientRouter = require('./routes/patient');
+var doctorRouter = require('./routes/doctor');
 
 var app = express();
 
@@ -25,7 +26,8 @@ app.use(cors());
 
 // routing of home and users route
 app.use('/', indexRouter);
-app.use('/patient', usersRouter);
+app.use('/patient', patientRouter);
+app.use('/doctor', doctorRouter);
 
 // connecting to the mongoose server
 connectMongoose();
