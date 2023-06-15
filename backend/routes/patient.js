@@ -5,7 +5,8 @@ const getAllPatient = require('../Controllers/getAllPatients')
 const addNewPatient = require('../Controllers/addNewPatient')
 const addDailyCheckUp = require('../Controllers/addDailyCheckup')
 const addBooking = require('../Controllers/addPatientBooking')
-const getAllBookings = require('../Controllers/PatientControllers/getAllBookings');
+const getAllBookings = require('../Controllers/PatientControllers/getAllBookings')
+const getDoctorBySpecialisation = require('../Controllers/PatientControllers/getDoctorBySpecialisation')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -66,17 +67,26 @@ router.post('/addDailyCheckupData', async (req, res, next) => {
 router.post('/addBooking', async (req, res, next) => {
 
   const data = req.body;
-  console.log(`Data received for booking is as follows: ${data}`);
-  
-  try {
-    await addBooking(data);
-    res.status(200).json({
-      "success": "Booking added successfully"
+  console.log(`Data received for booking is as follows: ${data.doctorId}`);
+  // console.log(`Slot number: ${data.slot}`);
+
+  if(!data.patientId || !data.doctorId || !data.slot) {
+    res.status(404).json({
+      "Failure": "required elements missing"
     });
-  } catch (error) {
-    res.status(500).json({
-      "failure": `Error occured: ${error}`
-    });
+    console.log(`Missing elements`);
+  }
+  else{
+    try {
+      await addBooking(data);
+      res.status(200).json({
+        "success": "Booking added successfully"
+      });
+    } catch (error) {
+      res.status(500).json({
+        "failure": `Error occured: ${error}`
+      });
+    }
   }
 });
 
@@ -100,6 +110,32 @@ router.get('/allBookings', async (req, res, next) => {
     })
   }
 });
+
+router.get('/doctorSpecialised', async(req, res, next) => {
+
+  let specialisation = req.query.specialisation;
+
+  if(!specialisation) {
+    try {
+      const doctors = await getDoctorBySpecialisation(req.body.specialisation);
+      res.status(200).send(doctors);
+    } catch (error) {
+      res.status(500).json({
+        "error": error
+      })
+    }
+  }
+  else {
+    try {
+      const doctors = await getDoctorBySpecialisation(specialisation);
+      res.status(200).send(doctors);
+    } catch (error) {
+      res.status(500).json({
+        "error": error
+      })
+    }
+  }
+})
 
 
 module.exports = router;

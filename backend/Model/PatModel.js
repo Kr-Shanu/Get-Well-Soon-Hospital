@@ -1,4 +1,3 @@
-// Here we will create a model for patient information
 const mongoose = require('mongoose');
 const Prescription = require('./PatientInfoSchemas/prescription');
 const DailyCheckup = require('./PatientInfoSchemas/dailyCheckUp');
@@ -34,17 +33,19 @@ const patientSchema = new mongoose.Schema({
     },
     bookings: [{
         doctorName: {
-            type: String,
-            required: true,
+            type: String
         },
         doctorId: {
             type: String,
             required: true,
         },
+        slot: {
+            type: Number
+        },
         time: {
             type: Date,
             default: Date.now,
-        }
+        },
     }],
     prescription: [Prescription.schema],
     dailyCheckup: [DailyCheckup.schema],

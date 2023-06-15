@@ -176,24 +176,30 @@ function DocSignUp() {
           <label htmlFor='qualification'>
             Qualification
           </label><br></br>
-          <input
-            type='text'
-            name='qualification'
-            placeholder='Enter your qualification'
-            onChange={handleChange}>
-          </input>
+          <select onChange={handleChange} name="qualification" id="qualification">
+            <option value="">Choose from below</option>
+            <option value="MBBS">MBBS</option>
+            <option value="FRCS">FRCS</option>
+          </select>
         </div>
 
         <div>
           <label htmlFor='specialisation'>
             Specialisation
           </label><br></br>
-          <input
-            type='text'
-            name='specialisation'
-            placeholder='Enter your specialisation'
-            onChange={handleChange}>
-          </input>
+          <select onChange={handleChange} name="specialisation" id="specialisation">
+            <option value="">Choose from below</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Surgery">Surgery</option>
+            <option value="Gynecology">Gynecology</option>
+            <option value="Pediatrics">Pediatrics</option>
+            <option value="Opthalmology">Opthalmology</option>
+            <option value="ENT">ENT</option>
+            <option value="Dermatology">Dermatology</option>
+            <option value="Orthopedic">Orthopedic</option>
+            <option value="Radiology">Radiology</option>
+            <option value="Psychiatry">Psychiatry</option>
+          </select>
         </div>
 
         <div id='submit-btn'>

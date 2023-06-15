@@ -45,8 +45,8 @@ router.get('/getAllPatients', async(req, res, next) => {
 
     // console.log(`Data at router: ${req.body}`);
     var doctorId = req.query.doctorId;
-
     console.log(`Doctor id at router: ${doctorId}`);
+    
     if(!doctorId) {
         doctorId = req.body.doctorId;
         try {

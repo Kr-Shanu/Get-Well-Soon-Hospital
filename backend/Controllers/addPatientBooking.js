@@ -9,8 +9,9 @@ const addPatientBooking = async (body) => {
 
         // create an array object
         const booking = {
-            doctorName: body.doctorName,
             doctorId: body.doctorId,
+            slot: body.slot,
+            doctorName: "Dr. " + body.doctorName,
             time: new Date(),
         }
 

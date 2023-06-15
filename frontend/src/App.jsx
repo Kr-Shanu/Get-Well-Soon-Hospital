@@ -13,6 +13,8 @@ import SignUp from './components/PatServices/SignUp/SignUp';
 import DocSignUp from './components/DocServices/DocSignUp/DocSignUp';
 import DocHome from './components/DocServices/HomePage/DocHome';
 import PatientList from './components/DocServices/PatientsList/PatientList';
+import BookAppointment from './components/PatServices/BookAppontment/BookAppointment';
+import TimeSlot from './components/PatServices/BookAppontment/TimeSlot/TimeSlot';
 
 function App() {
 
@@ -34,8 +36,8 @@ function App() {
           <Route path='/docSignUp' element={<DocSignUp/>} />
           <Route path='/docHome' element={<DocHome/>} />
           <Route path='/patientList' element={<PatientList/>} />
-
-
+          <Route path='/patientAppointmentBooking' element={<BookAppointment/>} />
+          <Route path='/timeSlot' element={<TimeSlot/>} />
         </Routes>
       </header>
     </div>

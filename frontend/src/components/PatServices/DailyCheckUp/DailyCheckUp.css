@@ -19,6 +19,7 @@
   padding: 0.4rem;
   border: none;
   border-radius: 5px;
+  width: 100%;
 }
 .daily-checkup-body .form-container .vital-check-section {
   display: flex;

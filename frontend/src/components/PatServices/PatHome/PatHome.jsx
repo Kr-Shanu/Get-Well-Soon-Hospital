@@ -14,6 +14,15 @@ function PatHome() {
 
             <div className='pat-cards-container'>
 
+                {/* Book an appointment card */}
+                <div id='appointment' onClick={() => { nav('/patientAppointmentBooking') }}>
+                    <PatHomeCard
+                        heading={"Book Appointment"}
+                        image={"https://tilestonesource.com/wp-content/uploads/2022/07/bookappointment.jpg"}
+                        info={"Book appointment with your doctor."}
+                    />
+                </div>
+
                 {/* First aid card */}
                 <div id='first-aid' onClick={() => { nav('/firstAid') }}>
                     <PatHomeCard
