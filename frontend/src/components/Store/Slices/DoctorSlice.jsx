@@ -9,7 +9,7 @@ const doctorSlice = createSlice({
     },
     reducers: {
         doctorLoggedIn(state, action) {
-            state.patientId = action.payload;
+            state.doctorId = action.payload;
             state.loggedIn = true;
             console.log("State: ", state);
         }

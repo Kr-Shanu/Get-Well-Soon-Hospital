@@ -3,6 +3,8 @@ const router = express.Router();
 
 const addNewDoctor = require('../Controllers/addNewDoctor');
 const getAllDoctors = require('../Controllers/getAllDoctors');
+const getPatientsList = require('../Controllers/DoctorController/getPateintsList');
+
 
 
 // route to get all doctors
@@ -18,7 +20,7 @@ router.post('/addDoctor', async (req, res, next) => {
     console.log(req.body);
 
     // Adding validation
-    if (!data.name || !data.age || !data.password || !data.phoneNumber || !data.qualification || !data.specialisation) {
+    if (!data.name || !data.age || !data.password || !data.phoneNumber || !data.qualification || !data.specialisation || !data.city) {
         return res.status(400).json({
             error: 'Missing required fields'
         });
@@ -37,5 +39,35 @@ router.post('/addDoctor', async (req, res, next) => {
         })
     }
 })
+
+// router to get all the patients 
+router.get('/getAllPatients', async(req, res, next) => {
+
+    // console.log(`Data at router: ${req.body}`);
+    var doctorId = req.query.doctorId;
+
+    console.log(`Doctor id at router: ${doctorId}`);
+    if(!doctorId) {
+        doctorId = req.body.doctorId;
+        try {
+            const patientlist = await getPatientsList(doctorId);
+            res.status(200).send(patientlist);
+        } catch (error) {
+            res.status(500).json({
+                "error": error
+            });
+        }
+    }
+    else {
+        try {
+            const patientlist = await getPatientsList(doctorId);
+            res.status(200).send(patientlist);
+        } catch (error) {
+            res.status(500).json({
+                "error": error
+            });
+        }
+    }
+});
 
 module.exports = router;

@@ -4,6 +4,8 @@ var router = express.Router();
 const getAllPatient = require('../Controllers/getAllPatients')
 const addNewPatient = require('../Controllers/addNewPatient')
 const addDailyCheckUp = require('../Controllers/addDailyCheckup')
+const addBooking = require('../Controllers/addPatientBooking')
+const getAllBookings = require('../Controllers/PatientControllers/getAllBookings');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -22,7 +24,7 @@ router.post('/addPatient', async (req, res, next) => {
   console.log(req.body);
 
   // Adding validation
-  if (!data.name || !data.age || !data.password || !data.phoneNumber) {
+  if (!data.name || !data.age || !data.password || !data.phoneNumber || !data.city) {
     return res.status(400).json({
       error: 'Missing required fields'
     });
@@ -58,5 +60,46 @@ router.post('/addDailyCheckupData', async (req, res, next) => {
     });
   }
 });
+
+
+// router to add new booking into user account
+router.post('/addBooking', async (req, res, next) => {
+
+  const data = req.body;
+  console.log(`Data received for booking is as follows: ${data}`);
+  
+  try {
+    await addBooking(data);
+    res.status(200).json({
+      "success": "Booking added successfully"
+    });
+  } catch (error) {
+    res.status(500).json({
+      "failure": `Error occured: ${error}`
+    });
+  }
+});
+
+
+// router to find all the bookings done by a patient
+router.get('/allBookings', async (req, res, next) => {
+
+  const body = req.body;
+  if(!body.patientId) {
+    res.status(404).json({
+      "error": "Patient Id not found"
+    });
+  }
+
+  try {
+    const bookings = await getAllBookings(body);
+    res.status(200).send(bookings);
+  } catch (error) {
+    res.status(500).json({
+      "error": error
+    })
+  }
+});
+
 
 module.exports = router;

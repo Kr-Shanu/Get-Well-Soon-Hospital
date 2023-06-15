@@ -11,6 +11,7 @@ function SignUp() {
         name: "",  // for name
         email: "",  //email,
         password: "",  //password
+        city: "", // city
         age: null,   //age
         phoneNumber: null,   //phoneNumber
     });
@@ -28,7 +29,7 @@ function SignUp() {
             console.log(`patient added successfully`);
             navigate('/patientLogin');
         }
-        catch(error) {
+        catch (error) {
             console.log(`Error occured: ${error}`);
             navigate('/failure');
         }
@@ -52,6 +53,11 @@ function SignUp() {
             case "password": setData((prev) => ({
                 ...prev,
                 "password": value
+            }));
+                break;
+            case "city": setData((prev) => ({
+                ...prev,
+                "city": value
             }));
                 break;
             case "age": setData((prev) => ({
@@ -86,9 +92,9 @@ function SignUp() {
                     <label htmlFor='name'>
                         Name
                     </label><br></br>
-                    <input 
-                        type='text' 
-                        name='name' 
+                    <input
+                        type='text'
+                        name='name'
                         placeholder='Enter Your Name'
                         onChange={handleChange}>
                     </input>
@@ -98,9 +104,9 @@ function SignUp() {
                     <label htmlFor='email'>
                         Email
                     </label><br></br>
-                    <input 
-                        type='email' 
-                        name='email' 
+                    <input
+                        type='email'
+                        name='email'
                         placeholder='Enter Your Email'
                         onChange={handleChange}>
                     </input>
@@ -110,9 +116,9 @@ function SignUp() {
                     <label htmlFor='password'>
                         Password
                     </label><br></br>
-                    <input 
-                        type='password' 
-                        name='password' 
+                    <input
+                        type='password'
+                        name='password'
                         placeholder='Enter a password'
                         onChange={handleChange}>
                     </input>
@@ -122,9 +128,9 @@ function SignUp() {
                     <label htmlFor='age'>
                         Age
                     </label><br></br>
-                    <input 
-                        type='number' 
-                        name='age' 
+                    <input
+                        type='number'
+                        name='age'
                         placeholder='Enter Your Age'
                         onChange={handleChange}>
                     </input>
@@ -134,16 +140,28 @@ function SignUp() {
                     <label htmlFor='phoneNumber'>
                         Phone Number
                     </label><br></br>
-                    <input 
-                        type='number' 
-                        name='phoneNumber' 
+                    <input
+                        type='number'
+                        name='phoneNumber'
                         placeholder='Enter Phone Number'
                         onChange={handleChange}>
                     </input>
                 </div>
 
+                <div>
+                    <label htmlFor='city'>
+                        City Name
+                    </label><br></br>
+                    <input
+                        type='text'
+                        name='city'
+                        placeholder='Enter your City'
+                        onChange={handleChange}>
+                    </input>
+                </div>
+
                 <div id='submit-btn'>
-                    <button 
+                    <button
                         onClick={(e) => { submitResponse(e) }}>
                         Submit
                     </button>

@@ -21,6 +21,9 @@ const DocSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    city:{
+        type: String,
+    },
     phoneNumber: {
         type: String,
         required: true,

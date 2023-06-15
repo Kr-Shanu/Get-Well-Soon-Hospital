@@ -1,0 +1,16 @@
+.doctor-home-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.doctor-home-main-container #heading {
+  margin-bottom: 10vh;
+}
+.doctor-home-main-container .doctor-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=DocHome.css.map */

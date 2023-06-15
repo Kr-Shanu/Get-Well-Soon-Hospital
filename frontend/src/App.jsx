@@ -10,7 +10,9 @@ import Prescriptions from './components/PatServices/Prescriptions/Prescriptions'
 import FirstAid from './components/PatServices/FirstAid/FirstAid'
 import DailyCheckup from './components/PatServices/DailyCheckUp/DailyCheckup'
 import SignUp from './components/PatServices/SignUp/SignUp';
-import DocSignUp from './components/DocServices/DocSignUp/DocSignUp'
+import DocSignUp from './components/DocServices/DocSignUp/DocSignUp';
+import DocHome from './components/DocServices/HomePage/DocHome';
+import PatientList from './components/DocServices/PatientsList/PatientList';
 
 function App() {
 
@@ -30,6 +32,10 @@ function App() {
           <Route path='/firstAid' element={<FirstAid/>} />
           <Route path='/signUp' element={<SignUp/>} />
           <Route path='/docSignUp' element={<DocSignUp/>} />
+          <Route path='/docHome' element={<DocHome/>} />
+          <Route path='/patientList' element={<PatientList/>} />
+
+
         </Routes>
       </header>
     </div>

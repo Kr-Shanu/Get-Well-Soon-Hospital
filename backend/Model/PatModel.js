@@ -24,14 +24,31 @@ const patientSchema = new mongoose.Schema({
         type: String,
         unique: true,
     },
+    city: {
+        type: String
+    },
     phoneNumber: {
         type: String,
         required: true,
         unique: true,
     },
+    bookings: [{
+        doctorName: {
+            type: String,
+            required: true,
+        },
+        doctorId: {
+            type: String,
+            required: true,
+        },
+        time: {
+            type: Date,
+            default: Date.now,
+        }
+    }],
     prescription: [Prescription.schema],
     dailyCheckup: [DailyCheckup.schema],
-}, {timestamps: true});
+}, { timestamps: true });
 
 const Patient = mongoose.model('Patient', patientSchema);
 

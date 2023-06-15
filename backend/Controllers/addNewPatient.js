@@ -7,7 +7,8 @@ const addNewPatient = (data) => {
         age: data.age,
         password: data.password,
         email: data.email,
-        phoneNumber: data.phoneNumber
+        phoneNumber: data.phoneNumber,
+        city: data.city,
     });
 
     newPatient.save()

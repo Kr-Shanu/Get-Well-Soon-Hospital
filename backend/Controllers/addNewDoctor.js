@@ -7,6 +7,7 @@ const addNewDoctor = (data) => {
         age: data.age,
         password: data.password,
         email: data.email,
+        city: data.city,
         phoneNumber: data.phoneNumber,
         qualification: data.qualification,
         specialisation: data.specialisation,

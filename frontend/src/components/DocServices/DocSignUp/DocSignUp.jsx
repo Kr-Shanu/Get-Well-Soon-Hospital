@@ -12,6 +12,7 @@ function DocSignUp() {
     email: "",  // email,
     password: "",  // password
     age: null,   // age
+    city: "", // city
     phoneNumber: null, // phone number
     qualification: "", // qualification
     specialisation: "",   // specialisation
@@ -64,6 +65,11 @@ function DocSignUp() {
       case "phoneNumber": setData((prev) => ({
         ...prev,
         "phoneNumber": value
+      }));
+        break;
+      case "city": setData((prev) => ({
+        ...prev,
+        "city": value
       }));
         break;
       case "qualification": setData((prev) => ({
@@ -150,6 +156,18 @@ function DocSignUp() {
             type='number'
             name='phoneNumber'
             placeholder='Enter Phone Number'
+            onChange={handleChange}>
+          </input>
+        </div>
+
+        <div>
+          <label htmlFor='city'>
+            City Name
+          </label><br></br>
+          <input
+            type='text'
+            name='city'
+            placeholder='Enter your City'
             onChange={handleChange}>
           </input>
         </div>
