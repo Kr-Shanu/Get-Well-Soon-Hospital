@@ -1,0 +1,7 @@
+.appointment-main-container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.appointment-main-container h1 {
+  margin-bottom: 5rem;
+}/*# sourceMappingURL=Appointment.css.map */

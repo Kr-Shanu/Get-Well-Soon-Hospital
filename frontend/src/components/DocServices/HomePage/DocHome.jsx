@@ -16,7 +16,7 @@ function DocHome() {
             <div className='doctor-cards-container'>
 
                 {/* Appointment card */}
-                <div onClick={() => {navigate('/doctorsAppointments')}}>
+                <div onClick={() => {navigate('/doctorAppointment')}}>
                     <DocHomeCard
                         heading="Appointments"
                         image = "https://images.unsplash.com/photo-1624969862293-b749659ccc4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwb2ludG1lbnR8ZW58MHx8MHx8fDA%3D&w=1000&q=80"

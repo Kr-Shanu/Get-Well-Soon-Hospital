@@ -6,12 +6,14 @@ const addPatientBooking = async (body) => {
 
         const patientId = body.patientId;
         const patient = await Patient.findById(patientId);
+        console.log(`day: ${body.day}`);
 
         // create an array object
         const booking = {
             doctorId: body.doctorId,
             slot: body.slot,
             doctorName: "Dr. " + body.doctorName,
+            appointmentDay: body.appointmentDay,
             time: new Date(),
         }
 

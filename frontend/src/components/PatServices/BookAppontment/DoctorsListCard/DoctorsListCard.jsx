@@ -3,7 +3,7 @@ import React from 'react'
 
 function DoctorsListCard(props) {
     
-    const name = props.name;
+    const docName = props.docName;
     const image = props.image;
 
     return (
@@ -11,7 +11,7 @@ function DoctorsListCard(props) {
 
             <div>
                 <h2>
-                    Dr. {name}
+                    Dr. {docName}
                 </h2>
             </div>
             <div>
@@ -21,4 +21,4 @@ function DoctorsListCard(props) {
     )
 }
 
-export default DoctorsListCard
+export default DoctorsListCard;

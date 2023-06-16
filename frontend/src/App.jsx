@@ -15,6 +15,7 @@ import DocHome from './components/DocServices/HomePage/DocHome';
 import PatientList from './components/DocServices/PatientsList/PatientList';
 import BookAppointment from './components/PatServices/BookAppontment/BookAppointment';
 import TimeSlot from './components/PatServices/BookAppontment/TimeSlot/TimeSlot';
+import Appointment from './components/DocServices/Appointment/Appointment';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='/patientList' element={<PatientList/>} />
           <Route path='/patientAppointmentBooking' element={<BookAppointment/>} />
           <Route path='/timeSlot' element={<TimeSlot/>} />
+          <Route path='/doctorAppointment' element={<Appointment/>} />
         </Routes>
       </header>
     </div>

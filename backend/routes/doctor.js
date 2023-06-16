@@ -4,6 +4,7 @@ const router = express.Router();
 const addNewDoctor = require('../Controllers/addNewDoctor');
 const getAllDoctors = require('../Controllers/getAllDoctors');
 const getPatientsList = require('../Controllers/DoctorController/getPateintsList');
+const getAppointment = require('../Controllers/DoctorController/getAppointments')
 
 
 
@@ -41,13 +42,13 @@ router.post('/addDoctor', async (req, res, next) => {
 })
 
 // router to get all the patients 
-router.get('/getAllPatients', async(req, res, next) => {
+router.get('/getAllPatients', async (req, res, next) => {
 
     // console.log(`Data at router: ${req.body}`);
     var doctorId = req.query.doctorId;
     console.log(`Doctor id at router: ${doctorId}`);
-    
-    if(!doctorId) {
+
+    if (!doctorId) {
         doctorId = req.body.doctorId;
         try {
             const patientlist = await getPatientsList(doctorId);
@@ -69,5 +70,21 @@ router.get('/getAllPatients', async(req, res, next) => {
         }
     }
 });
+
+
+// router to get all appointments within this week
+router.get('/getAppointment', async (req, res, next) => {
+    try {
+        const body = req.query;
+        console.log(`Doctor Id: ${body.doctorId}`);
+        const patients = await getAppointment(body);
+        console.log(`Patients list: ${patients}`);
+        res.status(200).send(patients);
+    } catch (error) {
+        console.log(`Error: ${error}`);
+        res.status(500).send({ error: "An error occurred while fetching appointments" });
+    }
+});
+
 
 module.exports = router;

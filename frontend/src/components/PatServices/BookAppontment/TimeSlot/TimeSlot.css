@@ -16,8 +16,20 @@
   margin-top: 10vh;
   margin-bottom: 5vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.time-slot-main-container .time-slots #calendar {
+  margin-top: 2rem;
+}
+.time-slot-main-container .time-slots #calendar label {
+  font-size: 200%;
+}
+.time-slot-main-container .time-slots #calendar input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
 }
 .time-slot-main-container .time-slots button {
   padding: 1rem;
