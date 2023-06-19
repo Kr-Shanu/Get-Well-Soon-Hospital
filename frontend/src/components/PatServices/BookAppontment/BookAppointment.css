@@ -6,7 +6,7 @@
   min-height: 100vh;
 }
 .book-appointment-main-container #heading {
-  margin-bottom: 3vh;
+  margin-bottom: 5vh;
 }
 .book-appointment-main-container .second-container {
   display: flex;
@@ -15,13 +15,13 @@
   width: 100%;
 }
 .book-appointment-main-container .second-container .button-container {
-  flex: 1;
-  margin-left: 8rem;
-  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex: 1;
+  margin-left: 8rem;
+  height: 70vh;
 }
 .book-appointment-main-container .second-container .button-container button {
   display: flex;
@@ -30,6 +30,7 @@
   flex-direction: column;
   margin-top: 1rem;
   width: 25vw;
+  min-width: 200px;
   border-radius: 8px;
   padding: 0.5rem;
   border: none;

@@ -7,6 +7,8 @@
 .prescription-card-container {
 
     @include center();
-    margin: 5vw;
+    flex-direction: column;
+    margin-top: 5vw;
+
 
 }

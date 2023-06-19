@@ -2,15 +2,22 @@ import './DocHome.css'
 import React from 'react'
 import DocHomeCard from './HomePageCards/doctorHomePageCard'
 import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie';
 
 function DocHome() {
 
     const navigate = useNavigate();
+    const handleLogOut = () => {
+        console.log("Logout for doctor clicked");
+        Cookies.remove("user_id");
+        navigate('/');
+    }
 
     return (
         <div className='doctor-home-main-container'>
             <div id='heading'>
                 <h1>Welcome Doctor</h1>
+                <button onClick={() => handleLogOut()}>Logout</button>
             </div>
 
             <div className='doctor-cards-container'>

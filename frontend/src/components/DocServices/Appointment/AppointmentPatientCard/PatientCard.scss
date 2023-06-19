@@ -52,7 +52,9 @@
             button {
                 padding: 1rem;
                 border-radius: 8px;
-
+                border: none;
+                background-color: RGB(21, 162, 184);
+                color: white;
             }
 
         }
@@ -62,10 +64,35 @@
             button {
                 padding: 1rem;
                 border-radius: 8px;
-
+                border: none;
+                background-color: RGB(21, 162, 184);
+                color: white;
             }
 
         }
     }
 
+    .prescription-section {
+
+        @include center();
+        input, textarea {
+            width: 25vw;
+            padding: 1rem;
+        }
+
+        label {
+            font-size: 140%;
+            margin-top: 1vh;
+        }
+
+        button {
+
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: none;
+            background-color: RGB(4, 123, 254);
+            color: white;
+        }
+    }
 }

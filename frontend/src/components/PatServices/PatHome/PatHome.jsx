@@ -2,15 +2,22 @@ import './PatHome.css';
 import React from "react";
 import PatHomeCard from './PatHomeCard/PatHomeCard';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function PatHome() {
 
     const nav = useNavigate();
+    const handleLogout = () => {
+        console.log("LogOut Clicked");
+        Cookies.remove("user_id");
+        nav('/');
+    }
 
     return (
         <div className="pat-home-main-container">
 
             <h1>Welcome Patient! How may we help you</h1>
+            <button onClick={() => handleLogout()}>Logout</button>
 
             <div className='pat-cards-container'>
 

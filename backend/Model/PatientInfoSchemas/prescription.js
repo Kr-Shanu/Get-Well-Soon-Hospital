@@ -7,16 +7,12 @@ const prescriptionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    comments: {
-        type: String,
-        required: true,
-    },
     medicines: [{
         type: String
     }],
-    nextVisit: {
-        type: Date,
-    }
+    doctorId: [{
+        type: String
+    }]
 });
 
 const Prescription = mongoose.model('Prescription', prescriptionSchema);

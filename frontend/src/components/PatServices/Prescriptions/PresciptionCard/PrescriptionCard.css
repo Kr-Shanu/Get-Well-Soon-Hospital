@@ -1,47 +1,19 @@
-.prescription-main-body {
-  width: 100%;
-}
-.prescription-main-body .date {
-  background-color: RGB(56, 56, 56);
-  border-radius: 8px;
-  margin-bottom: 3vh;
-}
-.prescription-main-body .prescription-card-body {
+.prescription-card-main-body {
   display: flex;
   flex-direction: row;
-  gap: 5vh;
   flex-wrap: wrap;
+  margin: 2rem;
+  gap: 5vw;
 }
-.prescription-main-body .prescription-card-body #doctor-name {
+.prescription-card-main-body div {
+  height: 20vh;
+  width: 25vw;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: RGB(56, 56, 56);
-  border-radius: 8px;
-  height: 22vh;
-  min-width: 200px;
-  flex: 1;
-}
-.prescription-main-body .prescription-card-body #details {
-  background-color: RGB(56, 56, 56);
-  border-radius: 8px;
-  height: 22vh;
-  min-width: 200px;
-  flex: 2;
-  display: flex;
+  justify-content: center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.prescription-main-body .prescription-card-body #medicines {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: RGB(56, 56, 56);
-  border-radius: 8px;
-  height: 22vh;
   min-width: 200px;
-  padding: 2rem;
-  flex: 1;
-  overflow-y: scroll;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }/*# sourceMappingURL=PrescriptionCard.css.map */

@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import verifyDoctorPassword from '../../../Services/verifyDoctorPassword';
 import { useDispatch } from 'react-redux';
-import { doctorLoggedIn } from '../../Store/Slices/DoctorSlice';
+import { userLoggedIn } from '../../Store/Slices/UserSlice';
+import Cookies from 'js-cookie';
 // import { useDispatch } from 'react-redux';
 
 function DocLogin() {
@@ -35,8 +36,6 @@ function DocLogin() {
 
         console.log("Id = " + credential[0]);
         console.log("Pw = " + credential[1]);
-        
-
     }, [credential])
 
     // Handle form submission
@@ -46,17 +45,19 @@ function DocLogin() {
             
             const validate = await verifyDoctorPassword(credential[0].toString(), credential[1]);
             if(validate !== -1) {
-                dispatch(doctorLoggedIn(validate));
+                dispatch(userLoggedIn(validate));
                 console.log(`Doctor id: ${validate}`);
-                navigate('/docHome')
+                Cookies.set("user_id", validate);
+                navigate('/docHome');
             }
         } catch (error) {
             console.log(`Error occured: ${error}`);
-            navigate('/failure')
+            navigate('/docLogin');
         }
     }
 
     return (
+
         <div className='pat-login-main-container'>
             <h1>Doctor Login!</h1>
             <div className='login-form-container'>

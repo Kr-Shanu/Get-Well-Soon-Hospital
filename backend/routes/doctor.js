@@ -4,7 +4,9 @@ const router = express.Router();
 const addNewDoctor = require('../Controllers/addNewDoctor');
 const getAllDoctors = require('../Controllers/getAllDoctors');
 const getPatientsList = require('../Controllers/DoctorController/getPateintsList');
-const getAppointment = require('../Controllers/DoctorController/getAppointments')
+const getAppointment = require('../Controllers/DoctorController/getAppointments');
+const addPrescription = require('../Controllers/DoctorController/addPrescription');
+const deleteAppointment = require('../Controllers/DoctorController/DeleteAppointment');
 
 
 
@@ -85,6 +87,25 @@ router.get('/getAppointment', async (req, res, next) => {
         res.status(500).send({ error: "An error occurred while fetching appointments" });
     }
 });
+
+
+// router to add patient prescription 
+router.post('/addPatientPrescription', async (req, res) => {
+    try {
+        const body = req.body;
+        console.log("patient id: " + body.patientId);
+        await addPrescription(body);
+        await deleteAppointment(body);
+        res.status(200).json({
+            "Success": "Added patient's prescription, also removed the appointment of patient"
+        });
+    } catch (error) {
+        res.status(400).json({
+            "Failure": "Could not add patient's prescription"
+        });
+    }
+});
+
 
 
 module.exports = router;

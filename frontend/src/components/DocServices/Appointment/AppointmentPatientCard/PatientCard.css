@@ -48,6 +48,9 @@
 .patient-card-main-section .patient-card-body #schedule button {
   padding: 1rem;
   border-radius: 8px;
+  border: none;
+  background-color: RGB(21, 162, 184);
+  color: white;
 }
 .patient-card-main-section .patient-card-body #vitals {
   display: flex;
@@ -58,4 +61,29 @@
 .patient-card-main-section .patient-card-body #vitals button {
   padding: 1rem;
   border-radius: 8px;
+  border: none;
+  background-color: RGB(21, 162, 184);
+  color: white;
+}
+.patient-card-main-section .prescription-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.patient-card-main-section .prescription-section input, .patient-card-main-section .prescription-section textarea {
+  width: 25vw;
+  padding: 1rem;
+}
+.patient-card-main-section .prescription-section label {
+  font-size: 140%;
+  margin-top: 1vh;
+}
+.patient-card-main-section .prescription-section button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: RGB(4, 123, 254);
+  color: white;
 }/*# sourceMappingURL=PatientCard.css.map */

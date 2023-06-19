@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './PatientCard.css';
+import Cookies from 'js-cookie';
+import addPatientPrescription from '../../../../Services/addPatientPrescription';
 
 function PatientCard(props) {
-    const { name, schedule, dailyCheckup, slot } = props;
+    const { name, schedule, dailyCheckup, slot, id } = props;
     const [selected, setSelected] = useState(false);
     const [writePrescription, setWritePrescription] = useState(false);
+    const [disease, setDisease] = useState(null);
+    const [medicine, setMedicine] = useState(null);
 
+    useEffect(() => {
+        console.log("Disease: " + disease);
+        console.log("Medicine: " + medicine);
+    }, [disease, medicine]);
 
     const handleVital = () => {
         setSelected(!selected);
@@ -14,6 +22,26 @@ function PatientCard(props) {
     const hanldePrescription = () => {
         setWritePrescription(!writePrescription);
     }
+
+    const handleSubmitPrescription = async (e) => {
+
+        console.log("Submission of the medicine");
+        const prescriptionBody = {
+            "patientId": id,
+            "disease": disease,
+            "medicines": medicine,
+            "doctorId": Cookies.get("user_id")
+        };
+
+        try {
+            await addPatientPrescription(prescriptionBody);
+            console.log("Patient prescription sent to backend");
+            window.location.reload(false);
+        } catch (error) {
+            console.log("Error found ", error);
+        }
+    };
+
 
     return (
         <div className="patient-card-main-section">
@@ -29,7 +57,8 @@ function PatientCard(props) {
 
                 {/* for time and slot */}
                 <div id="schedule">
-                    <p>Schedule is as follows: {schedule}-2023</p>
+                    <p>Schedule is as follows:</p><br></br>
+                    <p><b>{schedule.slice(0, 10)}</b></p>
                     <p>Slot: {slot}</p>
                     <button onClick={hanldePrescription}>Write Prescription</button>
                 </div>
@@ -62,19 +91,19 @@ function PatientCard(props) {
 
             {
                 writePrescription && (
-                    <div>
+                    <div className='prescription-section'>
                         <h3>Write Prescription down below</h3>
                         <div>
                             <label htmlFor='disease'>Enter Disease</label><br></br>
-                            <input type='text' id='disease' name='disease' placeholder='Patients disease'></input>
+                            <input onChange={(e) => { setDisease(e.target.value) }} type='text' id='disease' name='disease' placeholder='Patients disease'></input>
                         </div>
                         <br></br>
                         <div>
                             <label htmlFor='comments'>Enter comments</label><br></br>
-                            <textarea id='comments' name='comments' placeholder='enter comments here'></textarea>
+                            <textarea onChange={(e) => { setMedicine(e.target.value) }} id='comments' name='comments' placeholder='enter comments/medicines'></textarea>
                         </div>
                         <div>
-                            <button>Submit</button>
+                            <button onClick={(e) => { handleSubmitPrescription(e) }}>Submit</button>
                         </div>
                     </div>
                 )

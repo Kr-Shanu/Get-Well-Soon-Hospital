@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import verifyPassWord from '../../../Services/verifyPassWord';
 import { useDispatch } from 'react-redux';
-import { patientLoggedIn } from "../../Store/Slices/PatientSlice"
+import { userLoggedIn } from '../../Store/Slices/UserSlice';
+import Cookies from 'js-cookie';
 
 function PatLogin() {
 
@@ -45,8 +46,9 @@ function PatLogin() {
         try {
             const validate = await verifyPassWord(credential[0].toString(), credential[1]);
             if(validate !== -1) {
-                dispatch(patientLoggedIn(validate));
+                dispatch(userLoggedIn(validate));
                 console.log(`Patient id : ${validate}`);
+                Cookies.set("user_id", validate);
                 navigate('/success');
             }
         } catch (error) {

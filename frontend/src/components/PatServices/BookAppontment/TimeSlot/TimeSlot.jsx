@@ -1,14 +1,15 @@
 import './TimeSlot.css';
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import addPatientBooking from '../../../../Services/addPatientBooking';
+import Cookies from 'js-cookie';
 
 function TimeSlot(props) {
 
     const [selectedButton, setSelectedButton] = useState(null);
     const [day, setDay] = useState(null);
     const doctor = props.doctor;
-    const patientId = useSelector((state) => state.patient.patientId);
+    const patientId = Cookies.get("user_id");
 
     const handleClick = (buttonId) => {
         setSelectedButton(buttonId);

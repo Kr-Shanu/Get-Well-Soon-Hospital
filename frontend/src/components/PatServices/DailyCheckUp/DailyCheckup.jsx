@@ -1,21 +1,20 @@
 import './DailyCheckUp.css'
 import React, { useEffect, useState } from 'react'
 import addDailyCheckupData from '../../../Services/addDailyCheckupData';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function DailyCheckup() {
 
   const navigate = useNavigate();
-  const userDetails = useSelector((action) => {
-    return action.patient;
-  });
+  const patientId = Cookies.get("user_id");
 
   const handleSubmit = async (event) => {
 
     event.preventDefault();
 
-    if (userDetails.loggedIn === false) {
+    if (!patientId) {
       navigate('/patientLogin');
     }
     else {
@@ -37,7 +36,7 @@ function DailyCheckup() {
     "bloodSugar": 0,
     "caloriesIntake": 0,
     "caloriesBurnt": 0,
-    "patientId": userDetails.patientId,
+    "patientId": patientId,
   });
 
   const handleChange = (e) => {

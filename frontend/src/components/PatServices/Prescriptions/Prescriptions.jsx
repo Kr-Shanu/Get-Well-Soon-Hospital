@@ -1,14 +1,42 @@
-import './Prescription.css'
-import React from "react";
+import './Prescription.css';
+import React, { useEffect, useState } from "react";
 import PrescriptionCard from './PresciptionCard/PrescriptionCard';
+import getPrescription from '../../../Services/getPrescription';
+import Cookies from 'js-cookie';
 
 function Prescriptions() {
+    const patientId = Cookies.get("user_id");
+    const [prescription, setPrescription] = useState(null);
 
-    return(
+    useEffect(() => {
+        const fetchPrescription = async () => {
+            try {
+                const prescriptionData = await getPrescription({ patientId });
+                setPrescription(prescriptionData);
+                console.log(prescriptionData);
+            } catch (error) {
+                console.log("Error occurred: ", error);
+            }
+        };
+
+        fetchPrescription();
+    }, [patientId]);
+
+    return (
         <>
             <h1>Prescriptions</h1>
             <div className='prescription-card-container'>
-                <PrescriptionCard/>
+                {prescription ? (
+                    prescription.map((data, index) => (
+                        <PrescriptionCard
+                            key={index}
+                            disease={data.disease}
+                            medicine={data.medicines[0]}
+                        />
+                    ))
+                ) : (
+                    <h1>No Data Found</h1>
+                )}
             </div>
         </>
     );

@@ -12,7 +12,7 @@
     min-height: 100vh;
 
     #heading {
-        margin-bottom: 3vh;
+        margin-bottom: 5vh;
     }
 
     .second-container {
@@ -24,17 +24,17 @@
 
         .button-container {
 
+            @include center();
             flex: 1;
             margin-left: 8rem;
             height: 70vh;
-
-            @include center();
             
     
             button {
                 @include center();
                 margin-top: 1rem;
                 width: 25vw;
+                min-width: 200px;
                 border-radius: 8px;
                 padding: 0.5rem;
                 border: none;

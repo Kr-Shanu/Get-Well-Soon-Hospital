@@ -1,12 +1,13 @@
 import './PatientList.css'
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import getAllPatientList from '../../../Services/getAllPatientListForADoctor';
 import PatientListCard from './PatientListCard/patientListCard';
+import Cookies from 'js-cookie';
 
 function PatientList() {
 
-    const doctorId = useSelector((state) => state.doctor.doctorId);
+    const doctorId = Cookies.get("user_id");
     const [patients, setPatients] = useState([]);
     // console.log(`Doctor id in jsx: ${doctorId}`);
 

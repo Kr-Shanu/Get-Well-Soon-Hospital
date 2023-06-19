@@ -4,8 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const dotenv = require('dotenv');
+const session = require('cookie-session');
 const connectMongoose = require('./Connections/connection');
 const cors = require('cors')
+
+/* Import config */ // THIS IS NEW :)
+dotenv.config({path: path.resolve(__dirname, '.env')});
+
 
 var indexRouter = require('./routes/index');
 var patientRouter = require('./routes/patient');
@@ -24,6 +30,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+
+/* Set Cookie Settings */
+app.use(
+  session({
+    name: 'session',
+    secret: process.env.COOKIE_SECRET,
+    expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // 24 hours
+  })
+);
+
+
 // routing of home and users route
 app.use('/', indexRouter);
 app.use('/patient', patientRouter);
@@ -33,12 +50,12 @@ app.use('/doctor', doctorRouter);
 connectMongoose();
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

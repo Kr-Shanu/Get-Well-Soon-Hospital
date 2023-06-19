@@ -7,6 +7,7 @@ const addDailyCheckUp = require('../Controllers/addDailyCheckup')
 const addBooking = require('../Controllers/addPatientBooking')
 const getAllBookings = require('../Controllers/PatientControllers/getAllBookings')
 const getDoctorBySpecialisation = require('../Controllers/PatientControllers/getDoctorBySpecialisation')
+const getAllPrescription = require('../Controllers/PatientControllers/getAllPrescription')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -136,6 +137,21 @@ router.get('/doctorSpecialised', async(req, res, next) => {
     }
   }
 })
+
+
+// get all the prescriptions from the doctor
+router.get('/getAllPrescription', async (req, res) => {
+
+  const body = req.query;
+  try {
+    const prescription = await getAllPrescription(body);
+    res.status(200).send(prescription);
+  } catch (error) {
+    res.status(500).json({
+      "error": error
+    })
+  }
+});
 
 
 module.exports = router;
