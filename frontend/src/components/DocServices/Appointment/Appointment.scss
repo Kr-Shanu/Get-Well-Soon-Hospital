@@ -8,6 +8,11 @@
         margin-bottom: 5rem;
     }
 
+    #no-appointment {
 
-    
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+    }
 }

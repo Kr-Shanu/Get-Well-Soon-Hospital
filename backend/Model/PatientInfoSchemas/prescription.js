@@ -7,8 +7,8 @@ const prescriptionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    fromDate: {
-        type: Date,
+    comments: {
+        type: String,
         required: true,
     },
     medicines: [{

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Prescription = require('./PatientInfoSchemas/prescription');
 const DailyCheckup = require('./PatientInfoSchemas/dailyCheckUp');
+const moment = require('moment');
 
 const patientSchema = new mongoose.Schema({
     name: {
@@ -54,6 +55,10 @@ const patientSchema = new mongoose.Schema({
     prescription: [Prescription.schema],
     dailyCheckup: [DailyCheckup.schema],
 }, { timestamps: true });
+
+patientSchema.virtual('formattedAppointmentDate').get(function() {
+    return moment(this.bookings[0].appointmentDay).format('DD-MM-YYYY');
+});
 
 patientSchema.pre('save', function (next) {
     const currentDate = new Date();

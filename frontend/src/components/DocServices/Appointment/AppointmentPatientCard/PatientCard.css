@@ -10,8 +10,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 .patient-card-main-section .patient-card-body div {
+  margin: 1rem;
   height: 22vh;
   width: 25vw;
   min-width: 200px;
@@ -29,6 +31,10 @@
 .patient-card-main-section .patient-card-body #pat-info img {
   width: 100%;
   height: 90%;
+  max-height: 120px;
+  max-width: 300px;
+  min-width: 190px;
+  min-height: 120px;
 }
 .patient-card-main-section .patient-card-body #pat-info h3 {
   margin-top: 1rem;

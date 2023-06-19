@@ -11,7 +11,7 @@ function Appointment() {
     const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
-        if(appointments) {
+        if (appointments) {
             console.log(`aappointments are: ${appointments}`);
         }
     }, [appointments])
@@ -41,16 +41,24 @@ function Appointment() {
 
             {appointments.length > 0 ? (
                 <div className="patient-card-holder">
-                    {appointments.map((data) => (
-                        <PatientCard
-                            key={data._id}
-                            name={data.name}
-                            schedule={data.bookings.appointmentDay}
-                        />
-                    ))}
+                    {appointments.map((data) => {
+                        const matchingBookings = data.bookings.filter(
+                            (booking) => booking.doctorId === doctorId
+                        );
+
+                        return matchingBookings.map((booking) => (
+                            <PatientCard
+                                key={data._id}
+                                name={data.name}
+                                schedule={booking.appointmentDay}
+                                slot={booking.slot}
+                                dailyCheckup={data.dailyCheckup}
+                            />
+                        ));
+                    })}
                 </div>
             ) : (
-                <div>No appointments found</div>
+                <div id="no-appointment">No appointments found</div>
             )}
         </div>
     );

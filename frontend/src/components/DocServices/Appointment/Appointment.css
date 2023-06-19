@@ -4,4 +4,10 @@
 }
 .appointment-main-container h1 {
   margin-bottom: 5rem;
+}
+.appointment-main-container #no-appointment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
 }/*# sourceMappingURL=Appointment.css.map */

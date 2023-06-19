@@ -57,7 +57,7 @@ function PatLogin() {
 
     return (
         <div className='pat-login-main-container'>
-            <h1>Please Login!</h1>
+            <h1>Patient Login!</h1>
             <div className='login-form-container'>
                 <div>
                     <label htmlFor='number'>Phone Number</label><br></br>
