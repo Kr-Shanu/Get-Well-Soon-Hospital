@@ -7,7 +7,7 @@ function Emergency() {
         <div className='emergency-main-container'>
             <h1>Emergency</h1>
             <h2>Contact No: xxxxxxxxxx</h2>
-            <a href='tel:9931182487'>
+            <a href='tel:108'>
                 <button>Call Now</button>
             </a>
         </div>

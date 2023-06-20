@@ -12,7 +12,7 @@ function Home() {
 
             <div>
                 <h1>
-                    Welcome to Handy Hospital
+                    Get Well Soon Hospital
                 </h1>
             </div>
             <div>
