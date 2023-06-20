@@ -30,8 +30,9 @@ function Prescriptions() {
                     prescription.map((data, index) => (
                         <PrescriptionCard
                             key={index}
+                            doctor={data.doctorName}
                             disease={data.disease}
-                            medicine={data.medicines[0]}
+                            medicine={data.medicines}
                         />
                     ))
                 ) : (

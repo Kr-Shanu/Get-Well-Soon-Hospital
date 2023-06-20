@@ -3,13 +3,13 @@ import React from 'react'
 
 function PrescriptionCard(props) {
 
-    const { disease, medicine } = props;
+    const { doctor, disease, medicine } = props;
 
     return (
         <>
             <div className='prescription-card-main-body'>
                 <div>
-                    <h3>Dr. XYZ</h3>
+                    <h3>Dr. {doctor}</h3>
                 </div>
                 <div>
                     <h3>Disease</h3>

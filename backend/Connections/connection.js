@@ -1,20 +1,22 @@
 const mongoose = require('mongoose');
 
-// connecting to the mongoose server
+// Connecting to the MongoDB server
 const connectMongoose = async () => {
-
-    await mongoose.connect('mongodb://localhost:27017/patientDB', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => {
-        console.log(`Connected to MongoDB server`);
-    })
-    .catch((error) => {
+    try {
+        const username = process.env.DATABASE_USERNAME;
+        const password = process.env.MONGO_PW;
+        const databaseName = process.env.DATABASE_NAME; 
+        
+        const connectionString = `mongodb+srv://${username}:${password}@cluster0.q25eo.mongodb.net/${databaseName}?retryWrites=true&w=majority`;
+        
+        await mongoose.connect(connectionString, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('Connected to MongoDB server');
+    } catch (error) {
         console.log(`Caught Exception: ${error}`);
-    });
-}
+    }
+};
 
 module.exports = connectMongoose;
-
-// Working as fine as possible: checked and verified ✅✅

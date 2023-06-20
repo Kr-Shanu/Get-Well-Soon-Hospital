@@ -7,12 +7,15 @@ const prescriptionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    medicines: [{
+    medicines: {
         type: String
-    }],
-    doctorId: [{
+    },
+    doctorId: {
         type: String
-    }]
+    },
+    doctorName: {
+        type: String
+    }
 });
 
 const Prescription = mongoose.model('Prescription', prescriptionSchema);
