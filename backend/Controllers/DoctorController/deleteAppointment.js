@@ -1,6 +1,6 @@
 const Patient = require('../../Model/PatModel');
 
-const deleteAppointment = async (body) => {
+const DeleteAppointment = async (body) => {
     const patId = body.patientId;
     const docId = body.doctorId;
 
@@ -24,4 +24,4 @@ const deleteAppointment = async (body) => {
     }
 };
 
-module.exports = deleteAppointment;
+module.exports = DeleteAppointment;

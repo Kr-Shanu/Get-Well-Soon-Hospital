@@ -6,7 +6,7 @@ const getAllDoctors = require('../Controllers/getAllDoctors');
 const getPatientsList = require('../Controllers/DoctorController/getPateintsList');
 const getAppointment = require('../Controllers/DoctorController/getAppointments');
 const addPrescription = require('../Controllers/DoctorController/addPrescription');
-const deleteAppointment = require('../Controllers/DoctorController/DeleteAppointment');
+const DeleteAppointment = require('../Controllers/DoctorController/DeleteAppointment');
 
 
 
@@ -95,7 +95,7 @@ router.post('/addPatientPrescription', async (req, res) => {
         const body = req.body;
         console.log("patient id: " + body.patientId);
         await addPrescription(body);
-        await deleteAppointment(body);
+        await DeleteAppointment(body);
         res.status(200).json({
             "Success": "Added patient's prescription, also removed the appointment of patient"
         });
